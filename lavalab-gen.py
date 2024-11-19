@@ -458,10 +458,11 @@ def main():
         dockcomp["services"][name]["hostname"] = name
         dockcomp["services"][name]["dns_search"] = ""
         dockcomp["services"][name]["ports"] = []
-        dockcomp["services"][name]["volumes"] = [ "/boot:/boot", "/lib/modules:/lib/modules" ]
+        dockcomp["services"][name]["volumes"] = [ "/boot:/boot", "/lib/modules:/lib/modules", "/data/user_home/yyx:/data/user_home/yyx" ]
         dockcomp["services"][name]["environment"] = {}
         dockcomp["services"][name]["build"] = {}
         dockcomp["services"][name]["build"]["context"] = name
+        dockcomp["services"][name]["privileged"] = True
         if "build_args" in slave:
             dockcomp["services"][name]["build"]["args"] = slave['build_args']
         # insert here remote

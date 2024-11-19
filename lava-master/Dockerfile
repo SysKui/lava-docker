@@ -1,5 +1,7 @@
-FROM lavasoftware/lava-server:2024.05
+FROM yyx2002/lava-server:latest
+# FROM lavasoftware/lava-server:2023.10
 
+COPY debian.sources /etc/apt/sources.list.d/debian.sources
 RUN apt-get update && apt-get -y install sudo git
 
 COPY backup /root/backup/

@@ -1,5 +1,7 @@
-FROM lavasoftware/lava-dispatcher:2024.05
+FROM yyx2002/lava-dispatcher:latest
+# FROM lavasoftware/lava-dispatcher:2023.10
 
+COPY debian.sources /etc/apt/sources.list.d/debian.sources
 RUN apt-get update
 
 # telnet is for using ser2net
@@ -47,5 +49,8 @@ RUN chmod +x /root/entrypoint.d/*
 RUN if [ -x /usr/local/bin/extra_actions ] ; then /usr/local/bin/extra_actions ; fi
 
 EXPOSE 69/udp 80
+
+RUN git config --global http.proxy http://10.161.28.28:7790
+RUN git config --global https.proxy http://10.161.28.28:7790
 
 CMD /usr/local/bin/start.sh
