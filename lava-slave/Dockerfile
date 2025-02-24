@@ -6,7 +6,7 @@ RUN apt-get update
 
 # telnet is for using ser2net
 # git is necessary for checkout tests
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install telnet git ser2net patch lavacli gdb-multiarch
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install telnet git ser2net patch lavacli gdb-multiarch vim net-tools
 
 COPY configs/lava-slave /etc/lava-dispatcher/lava-slave
 
@@ -50,9 +50,13 @@ RUN if [ -x /usr/local/bin/extra_actions ] ; then /usr/local/bin/extra_actions ;
 
 EXPOSE 69/udp 80
 
-RUN git config --global http.proxy http://10.161.28.28:7790
-RUN git config --global https.proxy http://10.161.28.28:7790
+RUN git config --global http.proxy http://10.161.28.28:7890
+RUN git config --global https.proxy http://10.161.28.28:7890
 RUN mkdir -p /root/flipgdb
 COPY fliputils.py /root/flipgdb/fliputils.py
+COPY extract-ikconfig /root/extract-ikconfig
+RUN chmod +x /root/extract-ikconfig
+COPY check-pvpanic /root/check-pvpanic
+RUN chmod +x /root/check-pvpanic
 
 CMD /usr/local/bin/start.sh

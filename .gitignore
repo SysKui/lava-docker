@@ -1,2 +1,3 @@
 boards.yaml
 output/
+backup-[0-9]*

@@ -1,0 +1,3 @@
+#!/bin/sh
+set -e -u
+/root/extract-ikconfig "$1" | grep -i "pvpanic=y\|pvpanic_pci=y"
