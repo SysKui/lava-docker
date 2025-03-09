@@ -7,8 +7,8 @@ RUN apt-get update && apt-get -y install sudo git
 COPY backup /root/backup/
 
 COPY default/* /etc/default/
-RUN git config --global http.proxy http://10.161.28.28:7790
-RUN git config --global https.proxy http://10.161.28.28:7790
+RUN git config --global http.proxy http://10.161.28.28:7890
+RUN git config --global https.proxy http://10.161.28.28:7890
 RUN git clone https://github.com/BayLibre/lava-healthchecks.git
 RUN cp lava-healthchecks/health-checks/* /etc/lava-server/dispatcher-config/health-checks/
 COPY health-checks/* /etc/lava-server/dispatcher-config/health-checks/

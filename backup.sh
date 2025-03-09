@@ -32,3 +32,8 @@ docker exec $DOCKERID rm /root/joboutput.tar.gz || exit $?
 echo "Backup done in $BACKUP_DIR"
 rm -f backup-latest
 ln -sf $BACKUP_DIR backup-latest
+
+# copy the BACKUP_DIR to the backup-current, then github repo can trace the backup content
+# echo "Copy $BACKUP_DIR to backup-current"
+# rm -rf backup-current
+# cp -r $BACKUP_DIR backup-current

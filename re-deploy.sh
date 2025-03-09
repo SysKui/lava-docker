@@ -4,9 +4,10 @@ if [ "$(id -u)" -ne 0 ]; then
   echo "should be root"
   exit 1
 fi
-./backup.sh
+SHELLDIR="/data/user_home/yyx/lava-docker"
+$SHELLDIR/backup.sh
 systemctl stop lava
-rm -r output/
-./lavalab-gen.sh
-cp ./backup-latest/* ./output/lava-test-1/master/backup && cd output/lava-test-1/ && docker-compose build
+rm -r $SHELLDIR/output/
+$SHELLDIR/lavalab-gen.sh
+cp $SHELLDIR/backup-latest/* $SHELLDIR/output/lava-test-1/master/backup && cd $SHELLDIR/output/lava-test-1/ && docker-compose build
 systemctl start lava
