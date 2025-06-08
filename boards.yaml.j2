@@ -1,0 +1,30 @@
+---
+masters:
+  - name: master1
+    allowed_hosts: 
+      - "10.161.28.20"
+    host: local
+    webinterface_port: 9999
+    users:
+      - name: admin
+        token: longrandomtokenadmin
+        password: admin
+        superuser: true
+        staff: true
+    tokens:
+      - username: admin
+        token: dfjdfkfkdjfkdsjfsl
+        description: no description
+slaves:
+  - name: lab-slave-0
+    host: local
+    remote_master: master1
+    remote_user: admin
+    custom_volumes:
+      - /root/lava-qemu-flip:/root/lava-qemu-flip
+
+boards:
+{% for i in range(number)%}
+  - name: qemu-{{i + 1}}
+    type: qemu
+{% endfor %}
