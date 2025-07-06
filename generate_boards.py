@@ -1,3 +1,5 @@
+# Generate the boards.yaml using the boards.yaml.j2 template
+
 import argparse
 
 from jinja2 import Environment, FileSystemLoader
