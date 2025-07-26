@@ -1,0 +1,220 @@
+---
+masters:
+  - name: master1
+    allowed_hosts: 
+      - "*"
+    host: local
+    webinterface_port: 9999
+    users:
+      - name: admin
+        token: longrandomtokenadmin
+        password: admin
+        superuser: true
+        staff: true
+    tokens:
+      - username: admin
+        token: dfjdfkfkdjfkdsjfsl
+        description: no description
+slaves:
+  - name: lab-slave-0
+    host: local
+    remote_master: master1
+    remote_user: admin
+    dispatcher_ip: 192.168.2.11
+    custom_volumes:
+      - /root/lava-qemu-flip:/root/lava-qemu-flip
+      - /var/lib/shared_images:/var/lib/shared_images
+
+boards:
+
+  - name: qemu-1
+    type: qemu
+
+  - name: qemu-2
+    type: qemu
+
+  - name: qemu-3
+    type: qemu
+
+  - name: qemu-4
+    type: qemu
+
+  - name: qemu-5
+    type: qemu
+
+  - name: qemu-6
+    type: qemu
+
+  - name: qemu-7
+    type: qemu
+
+  - name: qemu-8
+    type: qemu
+
+  - name: qemu-9
+    type: qemu
+
+  - name: qemu-10
+    type: qemu
+
+  - name: qemu-11
+    type: qemu
+
+  - name: qemu-12
+    type: qemu
+
+  - name: qemu-13
+    type: qemu
+
+  - name: qemu-14
+    type: qemu
+
+  - name: qemu-15
+    type: qemu
+
+  - name: qemu-16
+    type: qemu
+
+  - name: qemu-17
+    type: qemu
+
+  - name: qemu-18
+    type: qemu
+
+  - name: qemu-19
+    type: qemu
+
+  - name: qemu-20
+    type: qemu
+
+  - name: qemu-21
+    type: qemu
+
+  - name: qemu-22
+    type: qemu
+
+  - name: qemu-23
+    type: qemu
+
+  - name: qemu-24
+    type: qemu
+
+  - name: qemu-25
+    type: qemu
+
+  - name: qemu-26
+    type: qemu
+
+  - name: qemu-27
+    type: qemu
+
+  - name: qemu-28
+    type: qemu
+
+  - name: qemu-29
+    type: qemu
+
+  - name: qemu-30
+    type: qemu
+
+  - name: qemu-31
+    type: qemu
+
+  - name: qemu-32
+    type: qemu
+
+  - name: qemu-33
+    type: qemu
+
+  - name: qemu-34
+    type: qemu
+
+  - name: qemu-35
+    type: qemu
+
+  - name: qemu-36
+    type: qemu
+
+  - name: qemu-37
+    type: qemu
+
+  - name: qemu-38
+    type: qemu
+
+  - name: qemu-39
+    type: qemu
+
+  - name: qemu-40
+    type: qemu
+
+  - name: qemu-41
+    type: qemu
+
+  - name: qemu-42
+    type: qemu
+
+  - name: qemu-43
+    type: qemu
+
+  - name: qemu-44
+    type: qemu
+
+  - name: qemu-45
+    type: qemu
+
+  - name: qemu-46
+    type: qemu
+
+  - name: qemu-47
+    type: qemu
+
+  - name: qemu-48
+    type: qemu
+
+  - name: qemu-49
+    type: qemu
+
+  - name: qemu-50
+    type: qemu
+
+  - name: qemu-51
+    type: qemu
+
+  - name: qemu-52
+    type: qemu
+
+  - name: qemu-53
+    type: qemu
+
+  - name: qemu-54
+    type: qemu
+
+  - name: qemu-55
+    type: qemu
+
+  - name: qemu-56
+    type: qemu
+
+  - name: qemu-57
+    type: qemu
+
+  - name: qemu-58
+    type: qemu
+
+  - name: qemu-59
+    type: qemu
+
+  - name: qemu-60
+    type: qemu
+
+  - name: qemu-61
+    type: qemu
+
+  - name: qemu-62
+    type: qemu
+
+  - name: qemu-63
+    type: qemu
+
+  - name: qemu-64
+    type: qemu
